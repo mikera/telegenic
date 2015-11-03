@@ -31,5 +31,10 @@
   		<artifactId>clojure-utils</artifactId>
   		<version>0.5.0</version>
   	</dependency>
+  	<dependency>
+	  <groupId>org.jcodec</groupId>
+	  <artifactId>jcodec-javase</artifactId>
+	  <version>0.1.9</version>
+	</dependency>
   </dependencies>
 </project>
