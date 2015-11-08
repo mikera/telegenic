@@ -11,10 +11,17 @@ https://github.com/jcodec/jcodec
 (use 'telegenic.core)
 (use 'mikera.image.core :as img)
 
-(let [f1 (img/new-image 100 100)
+(let [;; A green frame
+      f1 (img/new-image 100 100)
       _ (img/fill-rect! f1 0 0 100 100 java.awt.Color/GREEN)
+      
+      ;; A green frame
       f2 (img/new-image 100 100)
+      
+      ;; A sequence of frames. Frames can be re-used for efficiency.
       frames (concat (repeat 20 f1) (repeat 20 f2) (repeat 20 f1) (repeat 20 f2)))]
-     (encode frames {:filename "out.mp4"})
+  
+  ;; finally encode everything into an mp4
+  (encode frames {:filename "out.mp4"})
 
 ```
