@@ -1,6 +1,10 @@
 # telegenic
 Video creation and manipulation in Clojure
 
+Telegenic is a wrapper for the pure-Java JCodec library for video encoding / decoding.
+
+https://github.com/jcodec/jcodec
+
 ## Usage
 
 ```clojure
