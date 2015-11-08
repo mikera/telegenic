@@ -56,9 +56,9 @@
 	</repositories>
 
 	<scm>
-		<connection>scm:git:git@github.com:mikera/${project.artifactId}.git</connection>
-		<url>https://github.com/mikera/${project.artifactId}</url>
-		<developerConnection>scm:git:git@github.com:mikera/${project.artifactId}.git</developerConnection>
+		<connection>scm:git:git@github.com:mikera/telegenic.git</connection>
+		<url>https://github.com/mikera/telegenic</url>
+		<developerConnection>scm:git:git@github.com:mikera/telegenic.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
