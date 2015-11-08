@@ -12,8 +12,9 @@ https://github.com/jcodec/jcodec
 (use 'mikera.image.core :as img)
 
 (let [f1 (img/new-image 100 100)
-         _ (img/fill-rect! f1 0 0 100 100 java.awt.Color/GREEN)
-         f2 (img/new-image 100 100)]
-     (encode (concat (repeat 20 f1) (repeat 20 f2) (repeat 20 f1) (repeat 20 f2))) {:filename "out.mp4"})
+      _ (img/fill-rect! f1 0 0 100 100 java.awt.Color/GREEN)
+      f2 (img/new-image 100 100)
+      frames (concat (repeat 20 f1) (repeat 20 f2) (repeat 20 f1) (repeat 20 f2)))]
+     (encode frames {:filename "out.mp4"})
 
 ```
