@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.mikera</groupId>
 	<artifactId>telegenic</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	
 	<name>Telegenic</name>
 	
@@ -54,12 +54,5 @@
 			<url>https://clojars.org/repo</url>
 		</repository>
 	</repositories>
-
-	<scm>
-		<connection>scm:git:git@github.com:mikera/telegenic.git</connection>
-		<url>https://github.com/mikera/telegenic</url>
-		<developerConnection>scm:git:git@github.com:mikera/telegenic.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
 
 </project>
