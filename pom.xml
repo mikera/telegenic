@@ -56,8 +56,8 @@
 	</repositories>
 
 	<scm>
-		<connection>https://github.com/mikera/${project.artifactId}</connection>
-		<url>scm:git:git@github.com:mikera/${project.artifactId}.git</url>
+		<connection>scm:git:git@github.com:mikera/${project.artifactId}.git</connection>
+		<url>https://github.com/mikera/${project.artifactId}</url>
 		<developerConnection>scm:git:git@github.com:mikera/${project.artifactId}.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
