@@ -5,6 +5,8 @@ Telegenic is a wrapper for the pure-Java JCodec library for video encoding / dec
 
 https://github.com/jcodec/jcodec
 
+Currently you can use it to encode H264 video from a sequence of image frames. Not much support for anything else yet.
+
 ## Usage
 
 ```clojure
