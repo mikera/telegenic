@@ -6,5 +6,5 @@
   :plugins [[lein-localrepo "0.5.3"]]
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.jcodec/jcodec        "0.2.0"]
-;                 [org.jcodec/jcodec-javase "0.2.0"]
+                 [org.jcodec/jcodec-javase "0.2.0"] 
                  ])

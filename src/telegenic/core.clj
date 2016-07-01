@@ -1,13 +1,11 @@
 (ns telegenic.core
   (:import [java.io File])
   (:import [java.awt.image BufferedImage])
-  (:import [org.jcodec.api.awt FrameGrab]
+  (:import [org.jcodec.api.awt AWTFrameGrab] ;;changed, no longer in .awt
            [org.jcodec.codecs.h264 H264Encoder]
            [org.jcodec.api SequenceEncoder]
            [org.jcodec.common.model Picture]
-           [org.jcodec.scale AWTUtil])
-  (:require [mikera.image.core :as img])
-  )
+           [org.jcodec.scale AWTUtil]))
 
 (set! *warn-on-reflection* true)
 (set! *unchecked-math* true)
@@ -20,9 +18,8 @@
     (get-frame [s frame-number] (get-frame (File. s) frame-number))
   File
     (get-frame [file frame-number]
-      (let [^BufferedImage bi (FrameGrab/getFrame file (int frame-number))]
+      (let [^BufferedImage bi (AWTFrameGrab/getFrame file (int frame-number))]
         bi)))
-
 
 (defn encode
   "Encodes a sequence of frames to a video file.
@@ -33,8 +30,7 @@
      :filename   Filename to output the econded video to
      :log        True if you want logging output
      :framerate  Numeric number of frames per second"
-  ([frames]
-    (encode frames nil))
+  ([frames]         (encode frames nil))
   ([frames options]
     (let [start-time (System/currentTimeMillis)
           filename (str (or (:filename options "out.mp4")))
@@ -46,7 +42,7 @@
           counter (atom 0)]
       (doseq [frame frames]
         (let [^BufferedImage frame frame
-              ^Picture picture (AWTUtil/fromBufferedImage frame)]
+              ^Picture picture (AWTUtil/fromBufferedImageRGB frame)] ;;method changed.
           (.encodeNativeFrame enc picture))
         (swap! counter inc))
       (.finish enc)
