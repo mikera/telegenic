@@ -8,7 +8,7 @@
            [org.jcodec.scale AWTUtil]))
 
 (set! *warn-on-reflection* true)
-(set! *unchecked-math* true)
+(set! *unchecked-math*     true)
 
 (defprotocol PGetFrame
   (get-frame [video frame-number]))
