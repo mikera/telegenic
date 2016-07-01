@@ -1,3 +1,4 @@
+##Installing Most Recent jcodec
 These are maven-builds of the latest version of
 jcodec as of 1 July 2016.  The jcodec folks pushed
 out a major version increase in August/Nov, 0.2.0,
@@ -9,16 +10,21 @@ notably Media Player.  For my use case, I need
 portability.
 
 Enter jcodec 0.2.0, which is NOT currently
-on Maven.
+on the central Maven repository.
 
-You have a couple of options.  You can go grab the
-source from http://github.com/jcodec, and,
+You have a couple of options.
+
+#Via maven install (Blech)
+
+You can go grab the source from http://github.com/jcodec, and,
 assuming you have maven setup, use the java
 build system via  'mvn clean install' from
 the root directory and the /javase directory.
 
 That'll produce two jars identical to the ones
 here.
+
+#Via lein-localrep
 
 The "easier," more clojurian option, is to follow
 the example of this project.
@@ -29,21 +35,30 @@ awesome tool that lets you virtually "install"
 random jars into your local maven repository
 under whatever name you'd like, without ever
 having to touch maven.  If you go this route,
-add the ":plugins [[lein-localrepo "0.5.3"]]"
+add the
+
+```clojure
+:plugins [[lein-localrepo "0.5.3"]]
+```
+
 to your project.clj file, inside the defproject
 form, and save the file.
 
 Then, from a command prompt - wherever you call
 lein from - go to the lib directory and call:
 
-lein local-repo install org.jcodec/jcodec "0.2.0" ./lib/jcodec-0.2.0.jar
-lein local-repo install org.jcodec/jcodec-javase "0.2.0" ./lib/jcodec-javase-0.2.0.jar
-
+```bash
+lein localrepo install org.jcodec/jcodec "0.2.0" ./lib/jcodec-0.2.0.jar
+lein localrepo install org.jcodec/jcodec-javase "0.2.0" ./lib/jcodec-javase-0.2.0.jar
+```
 
 Lein should automagically install these two libraries into your .m2 folder,
 accessible via the dependencies:
+
+```clojure
 [org.jcodec/jcodec "0.2.0"] 
 [org.jcodec/jcodec-javase "0.2.0"]
+```
 
 If, in the future, jcodec development stabilizes, and the api
 doesn't break too much, or the 0.2.0 version is pushed to
