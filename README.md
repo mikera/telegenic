@@ -11,6 +11,8 @@ Telegenic is a wrapper for the pure-Java JCodec library for video encoding / dec
 
 http://jcodec.org/
 
+Check installation.md for more info on this.  Currently, the required 0.2.0 libraries are included in /lib.
+
 ## Usage
 
 ```clojure
@@ -31,3 +33,17 @@ http://jcodec.org/
   (encode frames {:filename "out.mp4"})
 
 ```
+
+#Changes in 0.0.2
+
+jcodec is still in development, so there are breaking changes to the API as well
+as non-implemented features.  0.0.1 relied on jcodec 0.1.9, which did not support
+portable encoding of .mp4 movies.  Specifically, on some platforms, the movie
+would immediately skip to the end, not playing anything. jcodec 0.2.0 fixes this,
+and quite a bit more, albeit with some breaking changes to the previous api.
+
+Telegenic now targets jcodec 0.2.0, and produces mp4s correctly.
+
+To go with 0.0.2, there's a short swing-based example included in telegenic.examples.
+
+
