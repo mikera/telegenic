@@ -1,7 +1,7 @@
 (ns telegenic.core
   (:import [java.io File])
   (:import [java.awt.image BufferedImage])
-  (:import [org.jcodec.api.awt AWTFrameGrab] ;;changed, no longer in .awt
+  (:import [org.jcodec.api FrameGrab] ;;changed, no longer in .awt
            [org.jcodec.codecs.h264 H264Encoder]
            [org.jcodec.api SequenceEncoder]
            [org.jcodec.common.model Picture]
@@ -18,7 +18,7 @@
     (get-frame [s frame-number] (get-frame (File. s) frame-number))
   File
     (get-frame [file frame-number]
-      (let [^BufferedImage bi (AWTFrameGrab/getFrame file (int frame-number))]
+      (let [^BufferedImage bi (FrameGrab/getFrameFromFile file (int frame-number))]
         bi)))
 
 (defn encode
@@ -35,7 +35,7 @@
     (let [start-time (System/currentTimeMillis)
           filename (str (or (:filename options "out.mp4")))
           ^File file (or (:file options (File. filename)))
-          enc (SequenceEncoder. file)
+          enc (SequenceEncoder/createSequenceEncoder file) ;api changed.
           ;; ^H264Encoder encoder (.getEncoder enc)
           ;; framerate (or (:frame-rate options 30))
           ;; _ (.setKeyInterval encoder (int framerate))

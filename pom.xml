@@ -16,7 +16,7 @@
   <scm>
     <connection>scm:git:git://github.com/mikera/telegenic.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/mikera/telegenic.git</developerConnection>
-    <tag>bf3aedb307162269ade2cbcc5afdadf722600672
+    <tag>195309bfe4d52345653cc1b9d70b7067efbc140d
 </tag>
     <url>https://github.com/mikera/telegenic</url>
   </scm>
