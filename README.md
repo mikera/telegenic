@@ -5,12 +5,6 @@ Video creation and manipulation in Clojure
 
 Currently you can use it to encode H264 video from a sequence of image frames. Not much support for anything else yet.
 
-## Note on JCodec usage
-
-Telegenic is a wrapper for the pure-Java JCodec library for video encoding / decoding. You may need to manually install the `jcodec-javase` dependency into your local maven repository, as this is currently not available on Maven Central. You can download the artifacts here:
-
-http://jcodec.org/
-
 ## Usage
 
 ```clojure
